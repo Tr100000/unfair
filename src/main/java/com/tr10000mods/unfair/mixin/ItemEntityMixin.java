@@ -14,6 +14,6 @@ import net.minecraft.item.Items;
 public class ItemEntityMixin {
     @ModifyVariable(method = "setStack", at = @At("HEAD"), ordinal = 0)
     public ItemStack dirt(ItemStack stack) {
-        return Unfair.enabled ? new ItemStack(Items.DIRT, stack.getCount()) : stack;
+        return Unfair.enabled ? new ItemStack(Items.POISONOUS_POTATO, stack.getCount()) : stack;
     }
 }
