@@ -1,0 +1,29 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "com.tr10000mods.unfair.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"AbstractFurnaceBlockEntityMixin",
+		"BedBlockMixin",
+		"BlockMixin",
+		"DifficultyUpdateC2SPacketMixin",
+		"EnderDragonEntityMixin",
+		"EntityMixin",
+		"EntityTypeMixin",
+		"FoodComponentMixin",
+		"ItemEntityMixin",
+		"ItemSettingsMixin",
+		"MinecraftServerMixin",
+		"PlayerEntityMixin"
+	],
+	"client": [
+		"MinecraftClientMixin",
+		"ScreenAccessor",
+		"ScreenMixin",
+		"SplashTextRendererMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

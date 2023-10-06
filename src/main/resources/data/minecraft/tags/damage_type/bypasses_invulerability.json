@@ -1,0 +1,10 @@
+{
+    "replace": false,
+    "values": [
+        "unfair:generic_unfair",
+        "unfair:block_hit",
+        "unfair:entity_hit",
+        "unfair:bed",
+        "unfair:collect_experience"
+    ]
+}

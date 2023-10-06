@@ -1,0 +1,48 @@
+package com.tr10000mods.unfair.mixin;
+
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import com.tr10000mods.unfair.Unfair;
+import com.tr10000mods.unfair.things.UnfairDamageTypes;
+import com.tr10000mods.unfair.things.UnfairUtils;
+
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.World.ExplosionSourceType;
+
+@Mixin(PlayerEntity.class)
+public class PlayerEntityMixin {
+    @Inject(method = "isInvulnerableTo", at = @At("HEAD"), cancellable = true)
+    private void isInvulnerableTo(DamageSource damageSource, CallbackInfoReturnable<Boolean> info) {
+        if (Unfair.enabled) {
+            info.setReturnValue(false);
+        }
+    }
+
+    @Inject(method = "canTakeDamage", at = @At("HEAD"), cancellable = true)
+    private void canTakeDamage(CallbackInfoReturnable<Boolean> info) {
+        if (Unfair.enabled) {
+            info.setReturnValue(true);
+        }
+    }
+    
+    @Inject(method = "shouldDamagePlayer", at = @At("HEAD"), cancellable = true)
+    private void shouldDamagePlayer(PlayerEntity player, CallbackInfoReturnable<Boolean> info) {
+        if (Unfair.enabled) {
+            info.setReturnValue(true);
+        }
+    }
+    
+    @Inject(method = "addExperience", at = @At("HEAD"))
+    private void addExperience(int experience, CallbackInfo info) {
+        if (Unfair.enabled && experience > 0) {
+            PlayerEntity player = (PlayerEntity)(Object)this;
+            UnfairUtils.killPlayer(player, UnfairUtils.fromDamageType(player.getWorld(), UnfairDamageTypes.EXPERIENCE_COLLECT));
+            player.getWorld().createExplosion(player, player.getX(), player.getY(), player.getZ(), 5, true, ExplosionSourceType.MOB);
+        }
+    }
+}
