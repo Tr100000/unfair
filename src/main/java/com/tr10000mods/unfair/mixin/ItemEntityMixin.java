@@ -13,7 +13,7 @@ import net.minecraft.item.Items;
 @Mixin(ItemEntity.class)
 public class ItemEntityMixin {
     @ModifyVariable(method = "setStack", at = @At("HEAD"), ordinal = 0)
-    public ItemStack dirt(ItemStack stack) {
+    public ItemStack oops(ItemStack stack) {
         return Unfair.enabled ? new ItemStack(Items.POISONOUS_POTATO, stack.getCount()) : stack;
     }
 }
