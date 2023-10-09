@@ -28,6 +28,22 @@ dependencies {
 	modImplementation "com.terraformersmc:modmenu:${modmenu_version}"
 }
 
+loom {
+	mods {
+		"unfair" {
+			sourceSet("main")
+		}
+	}
+	runs {
+		client {
+			vmArg "-Dloader.addMods=@../../additional_mods_1.20.1.txt"
+		}
+		server {
+			vmArg "-Dloader.addMods=@../../additional_mods_1.20.1.txt"
+		}
+	}
+}
+
 processResources {
 	inputs.property 'version', version
 
