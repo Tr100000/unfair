@@ -6,10 +6,15 @@
 		"version": "${version}",
 		"metadata": {
 			"name": "Unfair",
-			"description": "uh oh",
+			"description": "Making Minecraft unplayable since 2023.",
 			"contributors": {
 				"Tr10000": "Owner"
-			}
+			},
+			"contact": {
+				"sources": "https://github.com/Tr100000/Unfair",
+				"issues": "https://github.com/Tr100000/Unfair/issues"
+			},
+			"license": "MIT License"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
