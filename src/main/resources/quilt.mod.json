@@ -13,8 +13,7 @@
 			"contact": {
 				"sources": "https://github.com/Tr100000/Unfair",
 				"issues": "https://github.com/Tr100000/Unfair/issues"
-			},
-			"license": "MIT License"
+			}
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
