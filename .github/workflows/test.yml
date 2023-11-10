@@ -1,0 +1,31 @@
+name: test
+on: [pull_request, push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: latest-ubuntu
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1
+      - name: Setup Cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/loom-cache
+            ~/.gradle/wrapper
+          key: ${{runner.os}}-test-${{hashFiles('gradle/wrapper/gradle-wrapper.properties')}}
+      - name: Setup JDK
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Build Artifacts
+        run: ./gradlew build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: build/libs/*.jar
