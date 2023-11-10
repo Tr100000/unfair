@@ -2,7 +2,7 @@ name: test
 on: [pull_request]
 
 jobs:
-  build:
+  pull_request:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -24,3 +24,5 @@ jobs:
           java-version: '17'
       - name: Build Artifacts
         run: ./gradlew build
+      - name: Stop Gradle
+        run: ./gradlew --stop
