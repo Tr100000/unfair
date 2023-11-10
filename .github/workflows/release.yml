@@ -19,8 +19,6 @@ jobs:
           java-version: '17'
       - name: Build Artifacts
         run: ./gradlew build
-      - name: Stop Gradle
-        run: ./gradlew --stop
       - name: Upload Atrifacts to GitHub
         uses: AButler/upload-release-assets@v2.0
         with:
