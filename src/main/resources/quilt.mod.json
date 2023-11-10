@@ -1,7 +1,7 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "com.tr10000mods",
+		"group": "io.github.tr100000",
 		"id": "unfair",
 		"version": "${version}",
 		"metadata": {
@@ -18,7 +18,7 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.tr10000mods.unfair.Unfair"
+			"init": "io.github.tr100000.unfair.Unfair"
 		},
 		"depends": [
 			{

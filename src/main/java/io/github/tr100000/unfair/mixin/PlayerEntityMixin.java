@@ -1,4 +1,4 @@
-package com.tr10000mods.unfair.mixin;
+package io.github.tr100000.unfair.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -6,10 +6,9 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.tr10000mods.unfair.Unfair;
-import com.tr10000mods.unfair.things.UnfairDamageTypes;
-import com.tr10000mods.unfair.things.UnfairUtils;
-
+import io.github.tr100000.unfair.Unfair;
+import io.github.tr100000.unfair.things.UnfairDamageTypes;
+import io.github.tr100000.unfair.things.UnfairUtils;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World.ExplosionSourceType;

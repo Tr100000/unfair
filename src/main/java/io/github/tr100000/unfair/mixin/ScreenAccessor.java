@@ -1,4 +1,4 @@
-package com.tr10000mods.unfair.mixin;
+package io.github.tr100000.unfair.mixin;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
 # Unfair
-This is a Minecraft mod that makes the game completely unplayable.
+**THIS MOD IS FOR QUILT, THERE ARE NO PLANS TO SUPPORT OTHER LOADERS**
 
-Forge and Fabric are NOT supported.
+This is a Minecraft mod that makes the game completely unplayable.

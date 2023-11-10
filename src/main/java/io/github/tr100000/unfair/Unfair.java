@@ -1,4 +1,4 @@
-package com.tr10000mods.unfair;
+package io.github.tr100000.unfair;
 
 import static net.minecraft.server.command.CommandManager.argument;
 import static net.minecraft.server.command.CommandManager.literal;
@@ -20,8 +20,8 @@ import org.slf4j.LoggerFactory;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.BoolArgumentType;
-import com.tr10000mods.unfair.things.MakeThingsExplode;
 
+import io.github.tr100000.unfair.things.MakeThingsExplode;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.minecraft.client.MinecraftClient;

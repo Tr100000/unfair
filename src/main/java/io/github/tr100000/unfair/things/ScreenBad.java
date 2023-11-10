@@ -1,4 +1,4 @@
-package com.tr10000mods.unfair.things;
+package io.github.tr100000.unfair.things;
 
 public final class ScreenBad {
     private ScreenBad() {}

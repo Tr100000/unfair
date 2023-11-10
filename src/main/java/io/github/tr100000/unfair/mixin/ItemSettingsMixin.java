@@ -1,4 +1,4 @@
-package com.tr10000mods.unfair.mixin;
+package io.github.tr100000.unfair.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -6,8 +6,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import com.tr10000mods.unfair.Unfair;
-
+import io.github.tr100000.unfair.Unfair;
 import net.minecraft.item.Item;
 
 @Mixin(Item.Settings.class)

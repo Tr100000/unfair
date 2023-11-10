@@ -1,9 +1,8 @@
-package com.tr10000mods.unfair.things;
+package io.github.tr100000.unfair.things;
 
 import org.jetbrains.annotations.Nullable;
 
-import com.tr10000mods.unfair.Unfair;
-
+import io.github.tr100000.unfair.Unfair;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageType;
 import net.minecraft.entity.player.PlayerEntity;

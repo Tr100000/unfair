@@ -1,4 +1,4 @@
-package com.tr10000mods.unfair.mixin;
+package io.github.tr100000.unfair.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

@@ -1,4 +1,4 @@
-package com.tr10000mods.unfair.things;
+package io.github.tr100000.unfair.things;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.damage.DamageSource;
