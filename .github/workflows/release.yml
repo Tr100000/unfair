@@ -1,5 +1,8 @@
-name: Test
-on: [push, workflow_dispatch]
+name: Build & Release
+on:
+  release:
+    types:
+      - published
 
 jobs:
   build:
@@ -14,20 +17,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - name: Setup Cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/loom-cache
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-test-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
       - name: Build Artifacts
         run: ./gradlew build
       - name: Stop Gradle
         run: ./gradlew --stop
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3
+      - name: Upload Atrifacts to GitHub
+        uses: AButler/upload-release-assets@v2.0
         with:
-          name: artifacts
-          path: build/libs/*.jar
+          files: 'build/libs/*.jar'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
