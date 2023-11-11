@@ -24,5 +24,3 @@ jobs:
           key: ${{ runner.os }}-test-${{ hashFiles('gradle/wrapper/gradle-wrapper.properties') }}
       - name: Build Artifacts
         run: ./gradlew build
-      - name: Stop Gradle
-        run: ./gradlew --stop
