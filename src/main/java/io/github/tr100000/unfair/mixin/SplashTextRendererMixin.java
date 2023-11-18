@@ -1,11 +1,12 @@
 package io.github.tr100000.unfair.mixin;
 
+import io.github.tr100000.unfair.Unfair;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import io.github.tr100000.unfair.Unfair;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.SplashTextRenderer;
@@ -23,7 +24,7 @@ public class SplashTextRendererMixin {
             graphics.getMatrices().translate((float)screenWidth / 2.0F + 123.0F, 69.0F, 0.0F);
             graphics.getMatrices().multiply(Axis.Z_POSITIVE.rotationDegrees(-20.0F));
             float f = 1.8F - MathHelper.abs(MathHelper.sin((float)(Util.getMeasuringTimeMs() % 1000L) / 1000.0F * 6.2831855F) * 0.1F);
-            f = f * 100.0F / (float)(textRenderer.getWidth(splashText) + 32);
+            f *= 100.0F / (float)(textRenderer.getWidth(splashText) + 32);
             graphics.getMatrices().scale(f, f, f);
             graphics.drawCenteredShadowedText(textRenderer, splashText, 0, -8, 16711680 | alpha);
             graphics.getMatrices().pop();

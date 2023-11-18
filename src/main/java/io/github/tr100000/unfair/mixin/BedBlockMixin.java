@@ -1,14 +1,15 @@
 package io.github.tr100000.unfair.mixin;
 
+import io.github.tr100000.unfair.Unfair;
+import io.github.tr100000.unfair.things.UnfairDamageTypes;
+import io.github.tr100000.unfair.things.UnfairUtils;
+
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import io.github.tr100000.unfair.Unfair;
-import io.github.tr100000.unfair.things.UnfairDamageTypes;
-import io.github.tr100000.unfair.things.UnfairUtils;
 import net.minecraft.block.BedBlock;
 import net.minecraft.entity.Entity;
 

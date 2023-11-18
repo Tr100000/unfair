@@ -2,13 +2,14 @@ package io.github.tr100000.unfair.mixin;
 
 import java.util.function.Consumer;
 
+import io.github.tr100000.unfair.Unfair;
+
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import io.github.tr100000.unfair.Unfair;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;

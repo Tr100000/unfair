@@ -1,6 +1,7 @@
 package io.github.tr100000.unfair.things;
 
 import io.github.tr100000.unfair.Unfair;
+
 import net.minecraft.entity.damage.DamageType;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
