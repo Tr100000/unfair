@@ -27,7 +27,8 @@ public class ScreenMixin {
             List<Drawable> drawables = new ArrayList<>(accessor.getDrawables());
             List<Widget> widgets = drawables.stream().filter(drawable -> drawable instanceof Widget).map(widget -> (Widget)widget).collect(Collectors.toUnmodifiableList());
 
-            if (ScreenShuffle.positions.isEmpty()) {
+            if (ScreenShuffle.positions.isEmpty() || widgets.size() != ScreenShuffle.positions.size()) {
+                ScreenShuffle.positions.clear();
                 widgets.forEach(widget -> {
                     ScreenShuffle.positions.add(new Vector2i(widget.getX(), widget.getY()));
                 });
