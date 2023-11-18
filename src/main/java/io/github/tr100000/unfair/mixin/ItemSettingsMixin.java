@@ -13,7 +13,7 @@ import net.minecraft.item.Item;
 @Mixin(Item.Settings.class)
 public class ItemSettingsMixin {
     @Inject(method = "<init>", at = @At("TAIL"))
-    private void forceModifyYay(CallbackInfo info) {
+    private void init(CallbackInfo info) {
         if (Unfair.enabled) {
             Item.Settings settings = (Item.Settings)(Object)this;
             settings.maxCount(1);
