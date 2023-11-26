@@ -8,17 +8,19 @@
 		"BedBlockMixin",
 		"BlockMixin",
 		"DifficultyUpdateC2SPacketMixin",
-		"EnderDragonEntityMixin",
 		"EntityMixin",
 		"EntityTypeMixin",
 		"FoodComponentMixin",
 		"ItemEntityMixin",
 		"ItemSettingsMixin",
+		"LivingEntityMixin",
 		"MinecraftServerMixin",
 		"PlayerEntityMixin"
 	],
 	"client": [
 		"MinecraftClientMixin",
+		"RecipeBookWidgetAccessor",
+		"RecipeBookWidgetMixin",
 		"ScreenAccessor",
 		"ScreenMixin",
 		"SplashTextRendererMixin"

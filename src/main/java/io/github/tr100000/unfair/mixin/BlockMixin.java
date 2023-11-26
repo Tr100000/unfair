@@ -18,4 +18,11 @@ public class BlockMixin {
             info.setReturnValue(false);
         }
     }
+
+    @Inject(method = "getSlipperiness", at = @At("HEAD"), cancellable = true)
+    private void slippery(CallbackInfoReturnable<Float> info) {
+        if (Unfair.enabled) {
+            info.setReturnValue(1.0F);
+        }
+    }
 }

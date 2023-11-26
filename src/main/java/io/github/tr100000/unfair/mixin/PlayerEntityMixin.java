@@ -45,4 +45,18 @@ public class PlayerEntityMixin {
             player.getWorld().createExplosion(player, player.getX(), player.getY(), player.getZ(), 5, true, ExplosionSourceType.MOB);
         }
     }
+
+    @Inject(method = "getMaxNetherPortalTime", at = @At("HEAD"), cancellable = true)
+    private void longNetherPortalTime(CallbackInfoReturnable<Integer> info) {
+        if (Unfair.enabled) {
+            info.setReturnValue(400);
+        }
+    }
+
+    @Inject(method = "getDamageTiltStrength", at = @At("HEAD"), cancellable = true)
+    private void damageTilt(CallbackInfoReturnable<Float> info) {
+        if (Unfair.enabled) {
+            info.setReturnValue(100.0F);
+        }
+    }
 }

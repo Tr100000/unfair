@@ -1,5 +1,6 @@
 package io.github.tr100000.unfair.mixin;
 
+import io.github.tr100000.unfair.Unfair;
 import io.github.tr100000.unfair.things.ScreenShuffle;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,11 +15,13 @@ import net.minecraft.client.gui.screen.Screen;
 public class MinecraftClientMixin {
     @Inject(method = "tick", at = @At("HEAD"))
     private void pleaseDont(CallbackInfo info) {
-        ScreenShuffle.otherTimeThing++;
-        if (ScreenShuffle.otherTimeThing >= ScreenShuffle.timeForEachButton) {
-            ScreenShuffle.otherTimeThing = 0;
-            ScreenShuffle.timeValue++;
-            ScreenShuffle.shufflePositions();
+        if (Unfair.enabled) {
+            ScreenShuffle.otherTimeThing++;
+            if (ScreenShuffle.otherTimeThing >= ScreenShuffle.timeForEachButton) {
+                ScreenShuffle.otherTimeThing = 0;
+                ScreenShuffle.timeValue++;
+                ScreenShuffle.shufflePositions();
+            }
         }
     }
 

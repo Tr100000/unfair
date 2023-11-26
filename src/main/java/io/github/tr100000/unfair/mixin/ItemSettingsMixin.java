@@ -17,11 +17,17 @@ public class ItemSettingsMixin {
         if (Unfair.enabled) {
             Item.Settings settings = (Item.Settings)(Object)this;
             settings.maxCount(1);
+            settings.maxDamage(1);
         }
     }
 
     @ModifyVariable(method = "maxCount", at = @At("HEAD"), ordinal = 0)
     private int realism(int count) {
         return Unfair.enabled ? 1 : count;
+    }
+
+    @ModifyVariable(method = "maxDamage", at = @At("HEAD"), ordinal = 0)
+    private int realism2(int max) {
+        return Unfair.enabled ? 1 : max;
     }
 }
