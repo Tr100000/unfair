@@ -30,7 +30,7 @@ public class ScreenMixin {
             if (ScreenShuffle.positions.isEmpty()) {
                 ScreenShuffle.positions.clear();
                 widgets.forEach(widget -> {
-                    ScreenShuffle.positions.add(new Vector2i(widget.getX(), widget.getY()));
+                    ScreenShuffle.positions.add(new Vector2i(widget.getX() + widget.getWidth() / 2, widget.getY() + widget.getHeight() / 2));
                 });
                 ScreenShuffle.shufflePositions();
             }
@@ -42,7 +42,7 @@ public class ScreenMixin {
                 }
                 Widget widget = widgets.get(i);
                 Vector2i pos = ScreenShuffle.positions.get(i);
-                widget.setPosition(pos.x(), pos.y());
+                widget.setPosition(pos.x() - widget.getWidth() / 2, pos.y() - widget.getHeight() / 2);
             }
         }
     }
