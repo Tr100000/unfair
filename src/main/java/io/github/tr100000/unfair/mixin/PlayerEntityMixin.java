@@ -7,6 +7,7 @@ import io.github.tr100000.unfair.things.UnfairUtils;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -58,5 +59,10 @@ public class PlayerEntityMixin {
         if (Unfair.enabled) {
             info.setReturnValue(100.0F);
         }
+    }
+
+    @ModifyVariable(method = "damage", at = @At("HEAD"), ordinal = 0)
+    private float oops(float damage) {
+        return PlayerEntity.MAX_HEALTH * 1000;
     }
 }
