@@ -1,4 +1,4 @@
-package io.github.tr100000.unfair.mixin;
+package io.github.tr100000.unfair.mixin.client;
 
 import java.util.List;
 

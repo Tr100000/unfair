@@ -18,12 +18,12 @@
 		"PlayerEntityMixin"
 	],
 	"client": [
-		"MinecraftClientMixin",
-		"RecipeBookWidgetAccessor",
-		"RecipeBookWidgetMixin",
-		"ScreenAccessor",
-		"ScreenMixin",
-		"SplashTextRendererMixin"
+		"client.MinecraftClientMixin",
+		"client.RecipeBookWidgetAccessor",
+		"client.RecipeBookWidgetMixin",
+		"client.ScreenAccessor",
+		"client.ScreenMixin",
+		"client.SplashTextRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -1,4 +1,4 @@
-package io.github.tr100000.unfair.mixin;
+package io.github.tr100000.unfair.mixin.client;
 
 import io.github.tr100000.unfair.Unfair;
 import io.github.tr100000.unfair.things.ScreenShuffle;
